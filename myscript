@@ -1,0 +1,13 @@
+#!/bin/bash
+for (( i=1; i <= 10; i++ ))
+do
+if curl localhost 2>&1 | grep -q -i "Hello"
+then
+echo found
+echo "Pod is working"
+else
+echo not found
+echo "Test failed"
+fi
+done
+echo "Test was successful"
